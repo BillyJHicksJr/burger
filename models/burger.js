@@ -8,7 +8,10 @@ var burger = {
     create: function(burg, cb){
         orm.insertOne('burgers', ['burger_name', 'devoured'], [burg, false], cb)
     },
-    update: function(){
+    update: function (burgerId, cb) {
+        orm.updateOne("burger", "devoured", burgerId, function (res) {
+          cb(res);
+        });
 
     },
 }

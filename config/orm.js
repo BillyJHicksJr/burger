@@ -31,8 +31,14 @@ var orm = {
             cb(result)
         });
     },
-    updateOne: function(){
-
-    },
+    updateOne: (table, column, burgerId, cb) => {
+        var queryString = "UPDATE ?? SET ?? = 1 WHERE id = ?";
+        connection.query(queryString, [table, column, burgerId], (err, res) => {
+            console.log("update" + queryString);
+            if (err) throw err;
+            console.log(res);
+            cb(res);
+    });
+    }
 }
 module.exports = orm

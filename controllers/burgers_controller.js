@@ -15,6 +15,16 @@ router.post('/burger', function(req, res){
         res.redirect('/burgers')
     })
 })
-
+router.put("/api/burger/:id", (req, res) => {
+    var burgerId = req.params.id;
+  
+    burger.updateOne(burgerId, result => {
+      if (result.changedRows == 0) {
+        return res.status(404).end();
+      } else {
+        res.status(200).end();
+      }
+    });
+  });
 
 module.exports = router
