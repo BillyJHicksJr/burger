@@ -10,4 +10,11 @@ router.get('/burgers', function(req, res){
     })
 })
 
+router.post('/burger', function(req, res){
+    burger.create(req.body.patty, function(results){
+        res.redirect('/burgers')
+    })
+})
+
+
 module.exports = router

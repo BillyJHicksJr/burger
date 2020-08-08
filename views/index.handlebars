@@ -1,1 +1,30 @@
-<div></div>
+<div>
+    <h1>burger APPPPPP
+    </h1>
+
+    <div>
+        {{#each burgerdata}}
+            {{#unless this.devoured}}
+                <h1>{{this.burger_name}}</h1>
+            {{/unless}}
+        {{/each}}
+    </div>
+
+    <div>
+        {{#each burgerdata}}
+            {{#if this.devoured}}
+                <h1>{{this.burger_name}}</h1>
+            {{/if}}
+        {{/each}}
+    </div>
+
+    <div>
+        <form action='/burger' method='POST'>
+        <input name='patty' value=''></input>
+        <button type='submit'>Burgatize me</button>
+        </form>
+    </div>
+
+
+
+</div>
