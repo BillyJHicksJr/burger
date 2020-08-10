@@ -1,5 +1,5 @@
 var express = require('express');
-var burger = require('../models/burger');
+var burger = require('../models/burger.js');
 var router = express.Router()
 
 router.get('/burgers', function(req, res){
@@ -15,7 +15,7 @@ router.post('/burger', function(req, res){
         res.redirect('/burgers')
     })
 })
-router.put("/api/burger/:id", (req, res) => {
+router.put("/burger/:id", (req, res) => {
     var burgerId = req.params.id;
   
     burger.updateOne(burgerId, result => {

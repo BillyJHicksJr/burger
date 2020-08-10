@@ -1,4 +1,4 @@
-var connection = require('./connection');
+var connection = require('./connection.js');
 
 
 function printQuestionMarks(num) {
