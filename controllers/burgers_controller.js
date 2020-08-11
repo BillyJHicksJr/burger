@@ -15,7 +15,7 @@ router.post('/burger', function(req, res){
         res.redirect('/burgers')
     })
 })
-router.put("/burger/:id", (req, res) => {
+router.put("/api/burger/:id", (req, res) => {
     var burgerId = req.params.id;
   
     burger.updateOne(burgerId, result => {
