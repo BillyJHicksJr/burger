@@ -3,7 +3,7 @@ var burger = require('../models/burger.js');
 var router = express.Router()
 
 router.get('/burgers', function(req, res){
-    burger.all(function(data){
+    burger.selectAll(function(data){
         res.render('index', {
             burgerdata : data
         })
@@ -11,7 +11,7 @@ router.get('/burgers', function(req, res){
 })
 
 router.post('/burger', function(req, res){
-    burger.create(req.body.patty, function(results){
+    burger.insertOne(req.body.patty, function(results){
         res.redirect('/burgers')
     })
 })

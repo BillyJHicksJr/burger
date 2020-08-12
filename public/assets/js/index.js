@@ -11,10 +11,10 @@ $(function() {
         location.reload();
       });
     });
-    $(".create-burger-form").on("submit", event => {
+    $(".burgerbtn").on("submit", event => {
       event.preventDefault();
       const newBurger = {
-        burger_name: $("#createBurger").val().trim(),
+        burger_name: $("#newBurger").val().trim(),
         devoured: false
       };
       $.ajax("/api/burgers", {

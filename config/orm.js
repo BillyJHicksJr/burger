@@ -11,7 +11,7 @@ function printQuestionMarks(num) {
 
 
 var orm = {
-    selectall: function(table, cb){
+    selectAll: function(table, cb){
         var query = 'SELECT * FROM ' + table + ';'
         connection.query(query, function(error, result){
             if(error){ 
