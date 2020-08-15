@@ -1,5 +1,5 @@
 $(function() {
-    $(".devour").on("click", event => {
+    $(".devour").on("click",function(event) {
         const id = $(this).data("id");
         const devoured = {
             devoured: true
@@ -11,7 +11,7 @@ $(function() {
         location.reload();
       });
     });
-    $(".burgerbtn").on("submit", event => {
+    $(".burgerBtn").on("submit",function(event) {
       event.preventDefault();
       const newBurger = {
         burger_name: $("#newBurger").val().trim(),

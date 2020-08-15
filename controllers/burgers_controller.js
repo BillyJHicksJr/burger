@@ -2,8 +2,9 @@ var express = require('express');
 var burger = require('../models/burger.js');
 var router = express.Router()
 
-router.get('/burgers', function(req, res){
+router.get('/', function(req, res){
     burger.selectAll(function(data){
+      console.log(data)
         res.render('index', {
             burgerdata : data
         })
@@ -12,10 +13,10 @@ router.get('/burgers', function(req, res){
 
 router.post('/burger', function(req, res){
     burger.insertOne(req.body.patty, function(results){
-        res.redirect('/burgers')
+        res.redirect('/')
     })
 })
-router.put("/api/burger/:id", (req, res) => {
+router.put("/api/burgers/:id", (req, res) => {
     var burgerId = req.params.id;
   
     burger.updateOne(burgerId, result => {

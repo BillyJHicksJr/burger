@@ -31,7 +31,7 @@
             <img src="http://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4160.png" alt="burgerImg" id="burgerImg">
             <ul id="uneaten">
                 <h2> Devour Burger!!! </h2>
-                {{#each burger}}
+                {{#each burgerdata}}
                 {{#unless devoured}}
                 {{> burger/burger-block devoured=false}}
                 {{/unless}}
@@ -46,8 +46,8 @@
     
             <h2>Click on the Burger Button!!!</h2>
         
-            <form class="burgerInput">
-            <input type="text" id="newBurger" name="burger_name">
+            <form class="burgerInput" action="/burger" method="POST">
+            <input type="text" id="newBurger" name="patty">
                 <div class="flexbox-container">
                     
                     <button type="submit" id="burgerBtn">Add Burger</button>
@@ -60,7 +60,7 @@
             <img src="http://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4160.png" alt="burgerImg" id="burgerImg">
             <ul id="eaten">
                 <h2>You have devoured this burgers: </h2>
-                {{#each burger}}
+                {{#each burgerdata}}
                 {{#if devoured}}
                 {{> burger/burger-block devoured=true}}
                 {{/if}}
